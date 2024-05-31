@@ -29,6 +29,9 @@ public class ContractCourseService : IContractCourseService
 
         if (amount < course.RegistrationFee) throw new InvalidOperationException("The amount paid is less than the course fee");
 
+        var existContractCourse = _unitOfWork.ContractCourseRepository.Exist(studenId, courseId);
+        if (existContractCourse) throw new InvalidOperationException("You have already contract the course");
+
         var successPayment = _paymentService.Pay(new { Amount = amount });
         if (!successPayment) throw new ExternalException("An error occurred while trying to make the payment");
 

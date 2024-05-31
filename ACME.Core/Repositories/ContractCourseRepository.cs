@@ -18,4 +18,9 @@ internal class ContractCourseRepository : BaseRepository<ContractCourse>, IContr
         paginationInfo.Data = contractCourses.Skip((page - 1) * pageSize).Take(pageSize).ToList();
         return paginationInfo;
     }
+
+    public bool Exist(Guid studenId, Guid courseId)
+    {
+        return _list.Any(x => x.StudentId == studenId && x.CourseId == courseId);
+    }
 }
