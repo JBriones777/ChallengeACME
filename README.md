@@ -10,14 +10,13 @@ Este proyecto proporciona un sistema básico para gestionar estudiantes y cursos
 - Finalmente, he realizado pruebas unitarias independientes para toda la aplicación, utilizando librerías como FluentAssertions con la finalidad de que el lenguaje sea más orgánico y Moq para simular comportamientos convenientes para las pruebas. Estas pruebas heredan de una clase abstracta, lo que asegura que se sigan estándares consistentes al aplicarlas.
 
 ## Cosas por Mejorar
-
-- Persistencia de datos en una base de datos.
-- Integración con una pasarela de pago.
-- Publicación de la funcionalidad como API.
+- Me gustaría mejorar el control de errores de negocio en el sistema. Me gustaría que cada función devuelva un listado detallado con todas las validaciones que no fueron satisfechas. De esta manera, el consumidor de la función podrá conocer de forma completa y precisa todas las acciones que debe realizar para corregir los errores detectados.
 
 ## Bibliotecas Utilizadas
 
 - [xUnit.net](https://xunit.net/) para pruebas unitarias.
+- FluentAssertions
+- Moq
 
 ## Tiempo Invertido
 
